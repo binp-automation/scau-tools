@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='scau',
-    version='0.0.0',
+    version='0.0.1',
 
     description='Scientific automation toolkit',
     long_description=open('README.md').read(),
@@ -17,12 +17,14 @@ setup(
 
     license='MIT',
 
-    py_modules=[name],
+    packages=[''],
     entry_points = {
-        'console_scripts': [f'{name}={name}:main'],
+        'console_scripts': [
+            'scau = __main__:main'
+        ],
     },
 
-    install_requires=open('README.md').read().strip().split('\n'),
+    install_requires=open('requirements.txt').read().strip().split('\n'),
 
     keywords='scientific automation toolkit',
     classifiers=[
